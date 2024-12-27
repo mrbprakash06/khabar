@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta content="UTF-8"/>
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <p style="font-weight: bold;">Your daily updates.</p>
+    </div>
+    <div>
+      <article
+        style="border: 1px solid gray; padding: 12px"
+        th:each="news : ${newsList}"
+      >
+        <a
+          style="font-weight: 600"
+          th:href="${news.url}"
+          th:text="${news.title}"
+          >News Title</a
+        >
+        <p th:text="${news.summary}">This is a short summary of the news.</p>
+      </article>
+    </div>
+  </body>
+</html>
